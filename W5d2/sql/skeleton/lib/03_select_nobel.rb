@@ -24,12 +24,18 @@ end
 def prizes_from_1950
   # Display Nobel prizes for 1950.
   execute(<<-SQL)
+  SELECT *
+  FROM nobels
+  WHERE yr = 1950
   SQL
 end
 
 def literature_1962
   # Show who won the 1962 prize for Literature.
   execute(<<-SQL)
+  SELECT winner
+  FROM nobels
+  WHERE yr = 1962 AND subject = 'Literature'
   SQL
 end
 
